@@ -1,0 +1,39 @@
+p {
+    text-align: justify;
+    color: blue;
+    font-size: 18px;
+}
+
+#myid{
+    color:  rgb(255, 100, 140);
+    font-size: 12px;
+    font-style: italic;
+}
+
+.box {
+    margin: 20px;
+    border: 5px solid;
+    padding: 10px;
+    width: 200px;
+    height: 200px;
+    box-sizing: border-box;
+}
+
+.red {
+    font-size: 18px;
+    font-weight: bold;
+    font-style: italic;
+    color: red
+}
+
+#important {
+    font-size: 18px;
+    font-weight: bold;
+    font-style: italic;
+    color: darkblue;
+}
+
+body {
+    background: url("../images/background.jfif") repeat  ;
+    
+}
