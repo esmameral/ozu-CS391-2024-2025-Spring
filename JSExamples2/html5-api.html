@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>HTML5 APIs Examples</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/functions.js"></script>
+</head>
+
+<body>
+    <h1>Week-3 Examples</h1>
+    <!-- DRAG AND DROP API-->
+    <h2>Drag and Drop API</h2>
+    <div id="div1" ondragover="allowDrop(event)" ondrop="drop(event)">
+        <img id="cat" src="images/cat.jpg" draggable="true" ondragstart="drag(event)">
+    </div>
+    <div id="div2" ondragover="allowDrop(event)" ondrop="drop(event)">
+    </div>
+    <div id="div3" ondragover="allowDrop(event)" ondrop="drop(event)">
+    </div>
+    <div id="div4" ondragover="allowDrop(event)" ondrop="drop(event)">
+    </div>
+
+
+    <!-- GEOLOCATION API-->
+    <h2>GeoLocation API</h2>
+    <button onclick="getLocation()">Locate me</button>
+    <div id="location"></div>
+    
+    
+    <!-- WEB STORAGE-->
+    <h2>WebStorage API</h2>
+    <button onclick="saveDataInTheLocalStorage()">Add To localstorage</button>
+    <button onclick="saveDataInTheSessionStorage()">Add To sessionstorage</button>
+    <button onclick="deleteDataFromLocalStorage()">Remove from localstorage</button>
+    <button onclick="printLocalStorage()">Print localstorage data</button>
+</body>
+
+</html>
