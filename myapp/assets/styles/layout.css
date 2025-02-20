@@ -1,0 +1,80 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+/* Style the header */
+header {
+    width: 100%;
+    padding: 3px;
+    overflow: hidden;
+    background-color: #A30050;
+    /*
+    top: 0;
+    height: 55px;
+    position: fixed;
+    */
+}
+
+/* Style the menu links */
+header div {
+    /*float: right;*/
+}
+
+header div a {
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+}
+
+.content {
+    /*padding-top: 55px;*/
+}
+
+/* Change color on hover */
+header a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Create two unequal columns that floats next to each other */
+.column {
+    /*float: left;
+    padding: 10px;*/
+}
+
+/* Left column */
+.column.side {
+    /*width: 20%;*/
+}
+/* Middle column */
+.column.middle {
+   /* width: 80%;*/
+}
+
+
+/* Clear floats after the columns */
+footer {
+    color: black;
+    background-color: #ddd;
+    padding: 5px;
+    margin: 0;
+    /*clear:both;
+    width: 100%;
+    height: 230px;*/
+}
+
+footer div {
+    /*width: 31%;
+    margin: 10px;*/
+}
+
+footer div ul {
+    /*list-style-type: none;*/
+}
