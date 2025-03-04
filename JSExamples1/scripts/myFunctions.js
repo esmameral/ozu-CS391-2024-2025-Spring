@@ -35,6 +35,14 @@ function validateForm() {
 }
 
 function saveAnimalInfo(name, age, desc,breed,sex){
+    var array;
+    if(localStorage){
+        array=JSON.parse(localStorage.getItem('animalList'));
+        if(array==null){
+            array=[];
+            localStorage.setItem('animalList',array);
+        }
+    }
     var id = Math.floor(Math.random()*100);
     var animal = {
         "id":id, 
@@ -46,7 +54,8 @@ function saveAnimalInfo(name, age, desc,breed,sex){
     }
 
     if(localStorage){
-        localStorage.setItem(id,JSON.stringify(animal));
+        array.push(animal);
+        localStorage.setItem("animalList",JSON.stringify(array));
     }
 
 }
@@ -61,10 +70,10 @@ function printAnimals(){
     text += "<tr><th>Name</td><th>Breed</th><th>Age</th></tr>";
     
     if(localStorage){
-        var count=localStorage.length;
+        var array=JSON.parse(localStorage.getItem("animalList"))
+        var count=array.length;
         for(var i=0;i<count;i++){
-            var key=localStorage.key(i);
-            var animal=JSON.parse(localStorage.getItem(key));
+            var animal=array[i];
             text += "<tr><td>"+animal.name+"</td><td>"+animal.breed+"</td><td>"+animal.age+"</td></tr>";
             console.log(animal);
         }

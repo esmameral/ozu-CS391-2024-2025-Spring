@@ -7,19 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-</head>
+    <script src="assets/js/myfunctions.js"></script>  
+    
+   </head>
 
 <body>
 
-    <div class="container">
-      
+    <div class="container"> 
         <div class="row justify-content-center">
             <div class="col-sm-4">
                 <h2>Create a new course</h2>
-                <form method="post" action="success.html">
+                <form method="post" action="success.html" onsubmit="return validateFormData()">
                     <div class="mb-3">
                         <label for="courseCode" class="form-label">Course Code</label>
-                        <input type="text" class="form-control" id="courCode" placeholder="CS-999">
+                        <input type="text" class="form-control" id="courseCode" placeholder="CS-999">
                       </div>
                       <div class="mb-3">
                         <label for="courseName" class="form-label">Course Name</label>
@@ -31,18 +32,16 @@
                       </div>
                       <div class="mb-3">
                         <label for="courseDefinition" class="form-label">Course Definition</label>
-                        <textarea class="form-control" id="courseDefinition" rows="3"></textarea>
+                        <textarea class="form-control" id="courseDefinition" rows="2"></textarea>
                       </div>
 
-                      <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Select the instructor
-                        </button>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#">Ali Kara</a></li>
-                          <li><a class="dropdown-item" href="#">Ceyda Demir</a></li>
-                          <li><a class="dropdown-item" href="#">Can Yılmaz</a></li>
-                        </ul>
+                      <div class="mb-3">
+                        <label for="instructors" class="form-label">Instructor</label>
+                        <select class="form-control" id="instructors">
+                          <option value="ali">Ali Kara</option>
+                          <option value="ceyda">Ceyda Demir</option>
+                          <option value="can">Can Yılmaz</option>
+                        </select>
                       </div>
 
                       <button type="submit" class="btn btn-primary">Save Course</button>
