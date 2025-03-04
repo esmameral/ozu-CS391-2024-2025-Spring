@@ -1,7 +1,7 @@
 function validateForm() {
-    
+
     var name = document.getElementById("name").value;
-   
+
     if (name == null || name == "") {
         alert("Animal name must be filled out");
         return false;
@@ -16,17 +16,17 @@ function validateForm() {
         alert("Animal description must be filled out");
         return false;
     }
-    
+
     var breed = document.getElementById("breed").value;
     if (breed == null || breed == "") {
         alert("Animal breed must be filled out");
         return false;
     }
-    var sex="";
-    if(document.getElementById("female").checked)
-        sex=document.getElementById("female").value;
+    var sex = "";
+    if (document.getElementById("female").checked)
+        sex = document.getElementById("female").value;
     else
-        sex=document.getElementById("male").value;
+        sex = document.getElementById("male").value;
 
     saveAnimalInfo(name, age, desc, breed, sex);
 
@@ -34,28 +34,23 @@ function validateForm() {
     return true;
 }
 
-function saveAnimalInfo(name, age, desc,breed,sex){
+function saveAnimalInfo(name, age, desc, breed, sex) {
     var array;
-    if(localStorage){
-        array=JSON.parse(localStorage.getItem('animalList'));
-        if(array==null){
-            array=[];
-            localStorage.setItem('animalList',array);
+    if (localStorage) {
+        array = JSON.parse(localStorage.getItem('animalList'));
+        if (array == null) {
+            array = [];
+            localStorage.setItem('animalList', array);
         }
     }
-    var id = Math.floor(Math.random()*100);
-    var animal = {
-        "id":id, 
-        "name":name,
-        "age":age,
-        "desc":desc,
-        "breed":breed,
-        "sex":sex
-    }
+    var id = Math.floor(Math.random() * 100);
+    var animal = { id, name, age, desc, breed, sex }
 
-    if(localStorage){
+
+
+    if (localStorage) {
         array.push(animal);
-        localStorage.setItem("animalList",JSON.stringify(array));
+        localStorage.setItem("animalList", JSON.stringify(array));
     }
 
 }
@@ -63,21 +58,21 @@ function saveAnimalInfo(name, age, desc,breed,sex){
 
 
 
-function printAnimals(){
-    
+function printAnimals() {
+
 
     var text = "<table border='1'>";
     text += "<tr><th>Name</td><th>Breed</th><th>Age</th></tr>";
-    
-    if(localStorage){
-        var array=JSON.parse(localStorage.getItem("animalList"))
-        var count=array.length;
-        for(var i=0;i<count;i++){
-            var animal=array[i];
-            text += "<tr><td>"+animal.name+"</td><td>"+animal.breed+"</td><td>"+animal.age+"</td></tr>";
-            console.log(animal);
-        }
-        
+
+    if (localStorage) {
+        var array = JSON.parse(localStorage.getItem("animalList"))
+        var count = array.length;
+        array.forEach((e => {
+            const { name, breed, age } = e;
+            text += "<tr><td>" + name + "</td><td>" + breed + "</td><td>" + age + "</td></tr>";
+        }))
+
+
     }
     text += "</table>"
     document.getElementById("animals").innerHTML = text;
