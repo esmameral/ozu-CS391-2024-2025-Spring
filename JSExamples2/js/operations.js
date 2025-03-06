@@ -69,6 +69,7 @@ function arrowFunctionExpression() {
 
     const numbers = [18, 16, 91, 4, 101, 20, 3];
     let numbersSorted = numbers.sort((a, b) => a - b);
+   
     console.log(numbersSorted);
 }
 
