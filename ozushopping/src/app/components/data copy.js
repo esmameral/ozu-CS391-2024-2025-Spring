@@ -6,7 +6,7 @@ export const data = [
     "price": 9.99,
     "image": "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/1.png",
     "thumbnail": "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png",
-    "like":4,
+    "like":1,
     "dislike":0
   },
   {

@@ -1,23 +1,24 @@
 'use client'
-import Rate from "./Rate";
+import { Container, Row, Col } from "reactstrap";
+import ProductCard from "./ProductCard";
 
 export default function Catalog(props) {
-    const { products } = props;
+    const { products, onDelete, onLike,onDislike } = props;
     return (<div>
-        <table>
-            <thead>
-                <tr><th>Name</th><th>Price</th><th>Description</th><th>Like/Dislike</th></tr>
-            </thead>
-            <tbody>
-                {products.map((item,index)=>{
-                       return (<tr key={index}><td>{item.name}</td>
-                       <td>{item.price}</td><td>{item.description}</td>
-                       <td><Rate></Rate></td>
-                       </tr>)
+        <Container>
+            <Row >
+                {products.map((item, index) => {
+                    return (
+                        <Col key={`product-${index}`} sm="6" md="4" lg="2" >
+                            <ProductCard product={item} onDelete={onDelete} onLike={onLike} onDislike={onDislike}></ProductCard>
+                        </Col>    
+                    )
 
                 })}
-            </tbody>
-        </table>
+
+            </Row>
+        </Container>
+
     </div>
     );
 }

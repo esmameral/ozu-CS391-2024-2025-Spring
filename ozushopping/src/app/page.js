@@ -1,28 +1,46 @@
-import Image from "next/image";
+'use client'
 import styles from "./page.module.css";
-import Hello from "./components/Hello";
 import {data} from "./components/data"
 import Catalog from "./components/Catalog";
+import { useState } from "react";
 
 export default function Home() {
-  const name="Kerem";
+  const [productList, setProductList]=useState(data)
+
+  const deleteHandler = (id)=>{
+      const newList=productList.filter(
+        (product) => {
+          if(product.id!==id)
+            return product;
+              
+      })
+    setProductList(newList);
+  }
+
+  const likeHandler = (id)=>{
+    const newList=productList.map(
+      (product) => {
+        if(product.id==id)
+           product.like++;
+        return product;             
+    })
+  setProductList(newList);
+}
+
+const dislikeHandler = (id)=>{
+  const newList=productList.map(
+    (product) => {
+      if(product.id==id)
+         product.dislike++;
+      return product;             
+  })
+setProductList(newList);
+}
+
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-       
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.
-          </li>
-          <li>
-            <Hello myName={name}/>
-            <Catalog products={data} />
-          </li>
-        </ol>
-
-        
+            <Catalog products={productList} onDelete={deleteHandler} onLike={likeHandler} onDislike={dislikeHandler}/>
       </main>
       
     </div>
