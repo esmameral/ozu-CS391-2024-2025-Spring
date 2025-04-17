@@ -2,7 +2,8 @@ import SayName from "./SayName";
 
 const Hello = (props) => {
     const {myName}=props;
-    return <div> My Web Application  - {myName}
+    return <div> 
+        <p>My Web Application  - {myName}</p>
 
         <SayName/>
     </div>

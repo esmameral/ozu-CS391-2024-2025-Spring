@@ -1,48 +1,64 @@
 'use client'
-import styles from "./page.module.css";
-import {data} from "./components/data"
+import { data } from "./components/data"
 import Catalog from "./components/Catalog";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import AddNewProduct from "./components/AddNewProduct";
+import Counter from "./components/Counter";
+import { MyContext } from '@/app/components/MyContext';
 
 export default function Home() {
-  const [productList, setProductList]=useState(data)
+  const [productList, setProductList] = useState(data);
 
-  const deleteHandler = (id)=>{
-      const newList=productList.filter(
-        (product) => {
-          if(product.id!==id)
-            return product;
-              
+  const addHandler = (product) => {
+    setProductList([...productList, product]);
+  }
+  const deleteHandler = (id) => {
+    const newList = productList.filter(
+      (product) => {
+        if (product.id !== id)
+          return product;
+
       })
     setProductList(newList);
   }
 
-  const likeHandler = (id)=>{
-    const newList=productList.map(
+  const likeHandler = (id) => {
+    const newList = productList.map(
       (product) => {
-        if(product.id==id)
-           product.like++;
-        return product;             
-    })
-  setProductList(newList);
-}
+        if (product.id == id)
+          product.like++;
+        return product;
+      })
+    setProductList(newList);
+  }
 
-const dislikeHandler = (id)=>{
-  const newList=productList.map(
-    (product) => {
-      if(product.id==id)
-         product.dislike++;
-      return product;             
-  })
-setProductList(newList);
-}
+  const dislikeHandler = (id) => {
+    const newList = productList.map(
+      (product) => {
+        if (product.id == id)
+          product.dislike++;
+        return product;
+      })
+    setProductList(newList);
+  }
+
+  useEffect(
+    () => {
+      document.title = productList.length + " products found";
+    },
+    [productList.length]
+  )
 
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-            <Catalog products={productList} onDelete={deleteHandler} onLike={likeHandler} onDislike={dislikeHandler}/>
+    <div >
+      <main >
+        <Counter></Counter>
+        <MyContext.Provider value={{ data: "Data from context!" , onDelete:deleteHandler }}>
+          <AddNewProduct onAdd={addHandler}></AddNewProduct>
+          <Catalog products={productList}  onLike={likeHandler} onDislike={dislikeHandler} />
+        </MyContext.Provider>
       </main>
-      
+
     </div>
   );
 }

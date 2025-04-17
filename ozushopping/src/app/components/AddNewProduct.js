@@ -13,6 +13,8 @@ export default function AddNewProduct({onAdd}){
         "like":0,
         "dislike":0
       })
+      
+
 
       function handleChange(event){
         setNewProduct({...newProduct, [event.target.name]:event.target.value})

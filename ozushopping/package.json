@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "json-server":"json-server --watch data.json --port 8000",
+    "all": "npm-run-all --parallel dev json-server"
   },
   "dependencies": {
     "bootstrap": "^5.3.3",

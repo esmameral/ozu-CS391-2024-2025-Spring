@@ -1,4 +1,6 @@
 export default function Contact2(){
 
-    return <b>Contact2 component</b>
+    return <h2>Contact2 component</h2>
+    
+    
 }
