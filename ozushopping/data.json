@@ -1,42 +1,12 @@
 {
   "products": [
     {
-      "id": "1",
-      "name": "Essence Mascara Lash Princess",
-      "description": "The Essence Mascara Lash Princess is a popular mascara known for its volumizing and lengthening effects. Achieve dramatic lashes with this long-lasting and cruelty-free formula.",
-      "price": 9.99,
-      "image": "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/1.png",
-      "thumbnail": "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png",
-      "like": 4,
-      "dislike": 0
-    },
-    {
-      "id": "3",
-      "name": "Annibale Colombo Sofa",
-      "description": "The Annibale Colombo Sofa is a sophisticated and comfortable seating option, featuring exquisite design and premium upholstery for your living room.",
-      "price": 2499.99,
-      "image": "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/1.png",
-      "thumbnail": "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/thumbnail.png",
-      "like": 1,
-      "dislike": 0
-    },
-    {
       "id": "4",
       "name": "Wooden Bathroom Sink With Mirror",
       "description": "The Wooden Bathroom Sink with Mirror is a unique and stylish addition to your bathroom, featuring a wooden sink countertop and a matching mirror.",
       "price": 799.99,
       "image": "https://cdn.dummyjson.com/products/images/furniture/Wooden%20Bathroom%20Sink%20With%20Mirror/1.png",
       "thumbnail": "https://cdn.dummyjson.com/products/images/furniture/Wooden%20Bathroom%20Sink%20With%20Mirror/thumbnail.png",
-      "like": 1,
-      "dislike": 0
-    },
-    {
-      "id": "5",
-      "name": "Apple",
-      "description": "Fresh and crisp apples, perfect for snacking or incorporating into various recipes.",
-      "price": 1.99,
-      "image": "https://cdn.dummyjson.com/products/images/groceries/Apple/1.png",
-      "thumbnail": "https://cdn.dummyjson.com/products/images/groceries/Apple/thumbnail.png",
       "like": 1,
       "dislike": 0
     },
@@ -57,8 +27,8 @@
       "price": 12.99,
       "image": "https://cdn.dummyjson.com/products/images/groceries/Beef%20Steak/1.png",
       "thumbnail": "https://cdn.dummyjson.com/products/images/groceries/Beef%20Steak/thumbnail.png",
-      "like": 1,
-      "dislike": 0
+      "like": 3,
+      "dislike": 2
     },
     {
       "id": "8",
@@ -97,8 +67,8 @@
       "price": 79.99,
       "image": "https://cdn.dummyjson.com/products/images/fragrances/Gucci%20Bloom%20Eau%20de/1.png",
       "thumbnail": "https://cdn.dummyjson.com/products/images/fragrances/Gucci%20Bloom%20Eau%20de/thumbnail.png",
-      "like": 1,
-      "dislike": 0
+      "like": 3,
+      "dislike": 2
     },
     {
       "id": "12",
@@ -111,11 +81,14 @@
       "dislike": 0
     },
     {
-      "id": "21",
-      "name": "AAAAAAAAAAAAAAAAA",
-      "description": "xcxzcxzcxzczzcz",
-      "price": 14.99,
-      "image": "https://cdn.dummyjson.com/products/images/beauty/Powder%20Canister/1.png"
+      "id": "111",
+      "name": "sadad ds",
+      "description": "dsfsf ",
+      "price": "2113",
+      "image": "https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20Watch%20Series%204%20Gold/thumbnail.png",
+      "thumbnail": "https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20Watch%20Series%204%20Gold/thumbnail.png",
+      "like": 0,
+      "dislike": 0
     }
   ],
   "comments": [

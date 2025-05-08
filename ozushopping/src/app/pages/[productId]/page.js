@@ -1,11 +1,20 @@
+'use client'
 import Image from "next/image";
-import {data} from "../../components/data"
+import { useEffect, useState, use } from "react";
+
 
 export default function ProductDetailPage({params}){
-    const pList = data.filter((product) => {
-        return product.id == params.productId
-      });
-    const product = pList[0];
+    const { productId } = use(params);
+    const [product, setProduct]=useState({});
+    
+    useEffect(() => {
+        fetch(`http://localhost:8000/products/${productId}`)
+        .then(res => res.json())
+        .then(data => {
+          setProduct(data);
+          console.log(product)})
+        .catch((err) => console.log(err));
+      }, [product, productId]);
 
     return <div>
 

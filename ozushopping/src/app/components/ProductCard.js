@@ -7,7 +7,7 @@ import { MyContext } from '@/app/components/MyContext';
 
 
 
-const ProductCard = ({product,onLike,onDislike}) => {
+const ProductCard = ({product,onLikeDislike}) => {
     const contextObject = useContext(MyContext);
     const {onDelete} =contextObject; 
     return <div> 
@@ -34,7 +34,7 @@ const ProductCard = ({product,onLike,onDislike}) => {
     <Link href="" onClick={()=>onDelete(product.id)}>
         <Image src="/delete.png" width="24" height="24" alt="delete image"></Image>
     </Link>
-    <Rate product={product} onLike={onLike} onDislike={onDislike}></Rate> 
+    <Rate product={product} onLikeDislike={onLikeDislike}></Rate> 
   </CardBody>
 </Card>
     </div>
